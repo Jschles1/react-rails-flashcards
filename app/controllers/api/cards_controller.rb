@@ -14,6 +14,11 @@ class API::CardsController < ApplicationController
     end
   end
 
+  def destroy
+    @card = @deck.cards.find_by!(id: params[:id]) if @deck
+    @card.destroy
+  end
+
   private
 
   def card_params
