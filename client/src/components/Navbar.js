@@ -1,10 +1,20 @@
 import React from 'react';
-import { Menu, Icon } from 'semantic-ui-react';
+import { Menu, Icon, Button } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return(
-    <Menu>
+    <Menu borderless>
+      <Menu.Item header>Flashcards</Menu.Item>
+      <Menu.Item bordered>
+        <Button basic color="black">My Decks</Button>
+      </Menu.Item>
+      <Menu.Item>
+       <Button basic color="green">Quiz Yourself</Button>
+      </Menu.Item>
+      <Menu.Item position="right">
+        &copy; John Schlesinger
+      </Menu.Item>
     </Menu>
   );
 }
