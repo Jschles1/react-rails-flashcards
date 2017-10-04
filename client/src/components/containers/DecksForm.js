@@ -7,10 +7,11 @@ class DecksForm extends React.Component {
     super(props);
 
     this.state = {
-      name: ''
+      name: '',
+      subject: ''
     }
   }
-  
+
   render() {
     return(
       <Segment>
