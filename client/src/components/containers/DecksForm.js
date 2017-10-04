@@ -3,6 +3,14 @@ import { connect } from 'react-redux';
 import { Segment, Form } from 'semantic-ui-react';
 
 class DecksForm extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: ''
+    }
+  }
+  
   render() {
     return(
       <Segment>
