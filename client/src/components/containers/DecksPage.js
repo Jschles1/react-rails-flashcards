@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class DecksPage extends React.Component {
   render() {
@@ -8,4 +9,8 @@ class DecksPage extends React.Component {
   }
 }
 
-export default DecksPage;
+const mapStateToProps = (state) => {
+  return { decks: state.decks };
+}
+
+export default connect(mapStateToProps, {})(DecksPage);
