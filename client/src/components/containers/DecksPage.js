@@ -7,7 +7,7 @@ import DecksList from '../DecksList';
 
 class DecksPage extends React.Component {
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.actions.fetchDecks();
   }
 
