@@ -11,6 +11,9 @@ class DecksList extends React.Component {
           <Table.Cell>
             <Button fluid content="View Cards" basic color="blue" icon="right arrow" labelPosition="right"/>
           </Table.Cell>
+          <Table.Cell>
+            <Button fluid content="Delete Deck" basic color="red" icon="remove" labelPosition="right"/>
+          </Table.Cell>
         </Table.Row>
       );
     })
@@ -22,7 +25,7 @@ class DecksList extends React.Component {
             <Table.Row>
               <Table.HeaderCell>Deck Name:</Table.HeaderCell>
               <Table.HeaderCell>Subject:</Table.HeaderCell>
-              <Table.HeaderCell>Options:</Table.HeaderCell>
+              <Table.HeaderCell colSpan="2">Options:</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>
