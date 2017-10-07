@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 
-export function submitNewDeck(data, history) {
+export function submitNewDeck(data) {
   return function(dispatch) {
     return fetch(`/api/decks`, {
       method: 'POST',
