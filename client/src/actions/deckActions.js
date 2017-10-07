@@ -1,5 +1,14 @@
 import fetch from 'isomorphic-fetch';
 
+export function fetchDecks() {
+  return function(dispatch) {
+    dispatch({type: 'LOADING_DECKS'})
+    return fetch(`/api/decks`)
+      .then(resp => resp.json())
+      .then(decks => dispatch({type: 'FETCH_DECKS', payload: decks}))
+  }
+}
+
 export function submitNewDeck(data) {
   return function(dispatch) {
     return fetch(`/api/decks`, {
