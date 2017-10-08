@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../../actions/exerciseActions';
+import * as actions from '../../actions/cardActions';
 import { bindActionCreators } from 'redux';
 
 class DeckShow extends React.Component {
