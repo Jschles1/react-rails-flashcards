@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, Button } from 'semantic-ui-react';
 
-class DecksList extends React.Component {
+class DecksList extends React.PureComponent {
   render() {
     const renderDecks = this.props.decks.map(deck => {
       return(
