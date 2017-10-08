@@ -4,6 +4,7 @@ import { Container } from 'semantic-ui-react';
 import './App.css';
 import Navbar from './components/Navbar';
 import DecksPage from './components/containers/DecksPage';
+import DeckShow from './components/containers/DeckShow';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
             <Navbar/>
             <Container>
               <Route exact path="/" component={DecksPage}/>
+              <Route path="decks/:deckId" component={DeckShow}/>
             </Container>
           </div>
         </Router>
