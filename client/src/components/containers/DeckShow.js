@@ -15,7 +15,7 @@ class DeckShow extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const deck = state.decks.find(deck => deck.id === parseInt(ownProps.match.params.workoutId), 10);
+  const deck = state.decks.find(deck => deck.id === parseInt(ownProps.match.params.deckId), 10);
   
   if (deck) {
     return { deck: deck, cards: state.cards }
