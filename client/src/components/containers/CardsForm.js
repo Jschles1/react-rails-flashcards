@@ -20,3 +20,13 @@ class CardsForm extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return { cards: state.cards, errors: state.errors };
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return { actions: bindActionCreators(actions, dispatch) }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CardsForm);

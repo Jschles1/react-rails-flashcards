@@ -41,7 +41,7 @@ class DecksForm extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { decks: state.decks };
+  return { decks: state.decks, errors: state.errors };
 }
 
 const mapDispatchToProps = (dispatch) => {
