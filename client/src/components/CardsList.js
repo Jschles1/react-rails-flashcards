@@ -4,7 +4,20 @@ import { Table, Button } from 'semantic-ui-react';
 class CardsList extends React.PureComponent {
   render() {
     return(
-      <div></div>
+      <div>
+        <Table celled>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>Question:</Table.HeaderCell>
+              <Table.HeaderCell>Answer:</Table.HeaderCell>
+              <Table.HeaderCell colSpan="2">Options:</Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+          <Table.Body>
+            {(this.props.cards) ? renderDecks : null}
+          </Table.Body>
+        </Table>
+      </div>
     );
   }
 }
