@@ -3,6 +3,21 @@ import { Table, Button } from 'semantic-ui-react';
 
 class CardsList extends React.PureComponent {
   render() {
+    const renderCards = this.props.cards.map(card => {
+      return(
+        <Table.Row key={card.id}>
+          <Table.Cell>{card.question}</Table.Cell>
+          <Table.Cell>{card.answer}</Table.Cell>
+          <Table.Cell>
+            
+          </Table.Cell>
+          <Table.Cell>
+        
+          </Table.Cell>
+        </Table.Row>
+      );
+    })
+
     return(
       <div>
         <Table celled>
