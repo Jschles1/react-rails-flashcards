@@ -9,10 +9,7 @@ class CardsList extends React.PureComponent {
           <Table.Cell>{card.question}</Table.Cell>
           <Table.Cell>{card.answer}</Table.Cell>
           <Table.Cell>
-            
-          </Table.Cell>
-          <Table.Cell>
-        
+            <Button fluid id={card.id} content="Delete Card" basic color="red"/>
           </Table.Cell>
         </Table.Row>
       );
@@ -25,7 +22,7 @@ class CardsList extends React.PureComponent {
             <Table.Row>
               <Table.HeaderCell>Question:</Table.HeaderCell>
               <Table.HeaderCell>Answer:</Table.HeaderCell>
-              <Table.HeaderCell colSpan="2">Options:</Table.HeaderCell>
+              <Table.HeaderCell>Options:</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>
