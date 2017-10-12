@@ -30,3 +30,10 @@ export function submitNewCard(data, deckId) {
     })
   }
 }
+
+function handleErrors(response) {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  return response;
+}

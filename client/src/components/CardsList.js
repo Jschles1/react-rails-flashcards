@@ -26,7 +26,7 @@ class CardsList extends React.PureComponent {
             </Table.Row>
           </Table.Header>
           <Table.Body>
-            {(this.props.cards) ? renderDecks : null}
+            {(this.props.cards) ? renderCards : null}
           </Table.Body>
         </Table>
       </div>
