@@ -5,6 +5,11 @@ import { bindActionCreators } from 'redux';
 import CardsList from '../CardsList';
 
 class DeckShow extends React.Component {
+
+  componentDidMount() {
+    this.props.actions.fetchCards();
+  }
+
   render() {
     return(
       <div>
