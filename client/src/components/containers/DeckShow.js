@@ -7,13 +7,13 @@ import CardsList from '../CardsList';
 class DeckShow extends React.Component {
 
   componentDidMount() {
-    this.props.actions.fetchCards();
+    this.props.actions.fetchCards(this.props.deck.id);
   }
 
   render() {
     return(
       <div>
-        <CardsList/>
+        <CardsList cards={this.props.cards}/>
       </div>
     );
   }

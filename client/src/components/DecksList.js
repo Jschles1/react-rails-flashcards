@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Table, Button } from 'semantic-ui-react';
 
 class DecksList extends React.PureComponent {
@@ -9,7 +10,7 @@ class DecksList extends React.PureComponent {
           <Table.Cell>{deck.name}</Table.Cell>
           <Table.Cell>{deck.subject}</Table.Cell>
           <Table.Cell>
-            <Button fluid content="View Cards" basic color="blue" icon="right arrow" labelPosition="right"/>
+            <Button fluid as={Link} to={`/decks/${deck.id}`} content="View Cards" basic color="blue" icon="right arrow" labelPosition="right"/>
           </Table.Cell>
           <Table.Cell>
             <Button fluid content="Delete Deck" basic color="red" icon="remove" labelPosition="right"/>
