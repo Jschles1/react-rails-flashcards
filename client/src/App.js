@@ -14,8 +14,10 @@ class App extends Component {
           <div>
             <Navbar/>
             <Container>
-              <Route exact path="/" component={DecksPage}/>
-              <Route path="decks/:deckId" component={DeckShow}/>
+            <Route exact path="/" component={DecksPage}/>
+              <Switch>
+                <Route path="/decks/:deckId" component={DeckShow}/>
+              </Switch>
             </Container>
           </div>
         </Router>
