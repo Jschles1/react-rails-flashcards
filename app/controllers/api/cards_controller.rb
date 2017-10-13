@@ -26,6 +26,6 @@ class API::CardsController < ApplicationController
   end
 
   def set_deck
-    @deck = Deck.find(params[:id])
+    @deck = Deck.find(params[:deck_id])
   end
 end
