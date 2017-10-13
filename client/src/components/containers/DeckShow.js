@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions/cardActions';
 import { bindActionCreators } from 'redux';
 import CardsList from '../CardsList';
+import CardsForm from './CardsForm';
 
 class DeckShow extends React.Component {
 
@@ -14,6 +15,7 @@ class DeckShow extends React.Component {
     return(
       <div>
         <CardsList cards={this.props.cards}/>
+        <CardsForm/>
       </div>
     );
   }
