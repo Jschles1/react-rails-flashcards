@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/cardActions';
+import { Header } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import CardsList from '../CardsList';
 import CardsForm from './CardsForm';
@@ -14,6 +15,7 @@ class DeckShow extends React.Component {
   render() {
     return(
       <div>
+        <Header as="h2" icon="clone" content={this.props.deck.name} />
         <CardsList cards={this.props.cards}/>
         <CardsForm/>
       </div>

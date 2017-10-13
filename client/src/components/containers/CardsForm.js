@@ -31,7 +31,7 @@ class CardsForm extends React.Component {
         <Form onSubmit={this.handleOnSubmit}>
           <Form.Group widths="equal">
             <Form.Input value={this.state.question} onChange={this.handleOnChange} name="name" label="Question" placeholder="Question"/>
-            <Form.Input value={this.state.answer} onChange={this.handleOnChange} name="subject" label="Answer" placeholder="Answer"/>
+            <Form.Input value={this.state.answer} onChange={this.handleOnChange} name="answer" label="Answer" placeholder="Answer"/>
           </Form.Group>
           <Button basic color="black" content="Add Question" type="submit" icon="plus" labelPosition="right"/>
         </Form>
