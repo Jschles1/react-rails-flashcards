@@ -4,6 +4,8 @@ export default function decksReducer(state = [], action) {
       return action.payload;
     case 'ADD_DECK':
       return state.concat(action.payload);
+    case 'DELETE_WORKOUT':
+      return state.filter(deck => deck.id !== action.id);
     default:
       return state;
   }
