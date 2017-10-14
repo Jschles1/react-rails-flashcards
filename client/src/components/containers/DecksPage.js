@@ -11,10 +11,15 @@ class DecksPage extends React.Component {
     this.props.actions.fetchDecks();
   }
 
+  handleDeleteClick = (event) => {
+    const id = event.target.id
+    this.props.actions.deleteDeck(id);
+  }
+
   render() {
     return(
       <div>
-        <DecksList decks={this.props.decks}/>
+        <DecksList decks={this.props.decks} deleteWorkout={this.handleDeleteClick}/>
         <DecksForm/>
       </div>
     );

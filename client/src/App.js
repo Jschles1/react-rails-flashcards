@@ -13,6 +13,7 @@ class App extends Component {
         <Router>
           <div>
             <Navbar/>
+            <br></br>
             <Container>
             <Route exact path="/" component={DecksPage}/>
               <Switch>
