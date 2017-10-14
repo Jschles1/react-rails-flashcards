@@ -31,6 +31,17 @@ export function submitNewDeck(data) {
   }
 }
 
+export function deleteDeck(id) {
+  return function(dispatch) {
+    return fetch(`/api/decks/${id}`, {
+      method: 'DELETE'
+    })
+      .then(resp => {
+        dispatch({type: 'DELETE_DECK', id: parseInt(id)})
+      })
+  }
+}
+
 function handleErrors(response) {
   if (!response.ok) {
     throw Error(response.statusText);
