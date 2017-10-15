@@ -12,11 +12,19 @@ class DeckShow extends React.Component {
     this.props.actions.fetchCards(this.props.deck.id);
   }
 
+  handleDeleteClick = (event) => {
+    const id = (event.target.id)
+    this.props.actions.deleteCard(this.props.deck.id, id);
+  }
+
   render() {
     return(
       <div>
         <Header as="h2" icon="clone" content={this.props.deck.name} />
-        <CardsList cards={this.props.cards}/>
+        <CardsList 
+          cards={this.props.cards}
+          deleteCard={this.handleDeleteClick}
+        />
         <CardsForm/>
       </div>
     );
