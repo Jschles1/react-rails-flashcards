@@ -31,6 +31,17 @@ export function submitNewCard(data, deckId) {
   }
 }
 
+export function deleteCard(deckId, id) {
+  return function(dispatch) {
+    return fetch(`/api/decks/${deckId}/cards/${id}`, {
+      method: 'DELETE'
+    })
+      .then(resp => {
+        dispatch({type: 'DELETE_CARD', id: parseInt(id)})
+      })
+  }
+}
+
 function handleErrors(response) {
   if (!response.ok) {
     throw Error(response.statusText);
