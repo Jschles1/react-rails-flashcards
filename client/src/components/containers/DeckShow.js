@@ -25,7 +25,7 @@ class DeckShow extends React.Component {
           cards={this.props.cards}
           deleteCard={this.handleDeleteClick}
         />
-        <CardsForm/>
+        <CardsForm deckId={this.props.deck.id} />
       </div>
     );
   }

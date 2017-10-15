@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../../actions/deckActions';
+import * as actions from '../../actions/cardActions';
 import { bindActionCreators } from 'redux';
 import { Segment, Form, Input, Button } from 'semantic-ui-react';
 
@@ -22,7 +22,11 @@ class CardsForm extends React.Component {
   }
 
   handleOnSubmit = (event) => {
-    this.props.actions.submitNewCard(this.state);
+    this.props.actions.submitNewCard(this.state, this.props.deckId);
+    this.setState({
+      question: '',
+      answer: ''
+    })
   }
 
   render() {
@@ -30,7 +34,7 @@ class CardsForm extends React.Component {
       <Segment>
         <Form onSubmit={this.handleOnSubmit}>
           <Form.Group widths="equal">
-            <Form.Input value={this.state.question} onChange={this.handleOnChange} name="name" label="Question" placeholder="Question"/>
+            <Form.Input value={this.state.question} onChange={this.handleOnChange} name="question" label="Question" placeholder="Question"/>
             <Form.Input value={this.state.answer} onChange={this.handleOnChange} name="answer" label="Answer" placeholder="Answer"/>
           </Form.Group>
           <Button basic color="black" content="Add Question" type="submit" icon="plus" labelPosition="right"/>
