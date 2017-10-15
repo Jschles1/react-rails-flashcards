@@ -4,6 +4,8 @@ export default function cardsReducer(state = [], action) {
       return action.payload;
     case 'ADD_CARD':
       return state.concat(action.payload);
+    case 'DELETE_CARD':
+      return state.filter(card => card.id !== action.id);
     default:
       return state;
   }
