@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions/deckActions';
 import { bindActionCreators } from 'redux';
 import { Segment, Form, Input, Button } from 'semantic-ui-react';
+import FormError from '../FormError';
 
 class DecksForm extends React.Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class DecksForm extends React.Component {
   render() {
     return(
       <Segment>
+        {this.props.errors === true ? <FormError/> : null}
         <Form onSubmit={this.handleOnSubmit}>
           <Form.Group widths="equal">
             <Form.Input value={this.state.name} onChange={this.handleOnChange} name="name" label="Deck Name" placeholder="Deck Name"/>
