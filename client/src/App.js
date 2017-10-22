@@ -5,6 +5,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import DecksPage from './components/containers/DecksPage';
 import DeckShow from './components/containers/DeckShow';
+import QuizPage from './components/containers/QuizShow';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
               <Switch>
                 <Route path="/decks/:deckId" component={DeckShow}/>
               </Switch>
+            <Route exact path="/quiz" component={QuizPage}/>
             </Container>
           </div>
         </Router>
