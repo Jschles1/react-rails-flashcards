@@ -10,7 +10,7 @@ const Navbar = () => {
         <Button basic color="black" as={Link} to={`/`}>My Decks</Button>
       </Menu.Item>
       <Menu.Item>
-       <Button basic color="green">Quiz Yourself</Button>
+       <Button basic color="green" as={Link} to={`/quiz`}>Quiz Yourself</Button>
       </Menu.Item>
       <Menu.Item position="right">
         &copy; John Schlesinger
