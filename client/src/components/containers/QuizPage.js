@@ -16,4 +16,12 @@ class QuizPage extends React.Component {
   }
 }
 
-export default QuizPage;
+const mapStateToProps = (state) => {
+  return { decks: state.decks, cards: state.cards, errors: state.errors };
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return { actions: bindActionCreators(actions, dispatch) }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuizPage);

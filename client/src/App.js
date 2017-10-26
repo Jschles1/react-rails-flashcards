@@ -5,7 +5,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import DecksPage from './components/containers/DecksPage';
 import DeckShow from './components/containers/DeckShow';
-import QuizPage from './components/containers/QuizShow';
+import QuizPage from './components/containers/QuizPage';
 
 class App extends Component {
   render() {
