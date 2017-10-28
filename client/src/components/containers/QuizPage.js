@@ -5,6 +5,13 @@ import { bindActionCreators } from 'redux';
 import ChooseDeckForQuiz from '../ChooseDeckForQuiz';
 
 class QuizPage extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      choosingDeck: true
+    }
+  }
 
   componentDidMount() {
     this.props.actions.fetchDecks();
