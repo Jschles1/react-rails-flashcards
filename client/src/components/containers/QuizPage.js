@@ -17,10 +17,16 @@ class QuizPage extends React.Component {
     this.props.actions.fetchDecks();
   }
 
+  handleDeckChoice = (event) => {
+    this.setState({
+      choosingDeck: false
+    })
+  }
+
   render() {
     return(
       <div>
-        <ChooseDeckForQuiz decks={this.props.decks}/>
+        {(this.state.choosingDeck) ? <ChooseDeckForQuiz decks={this.props.decks} choose={this.handleDeckChoice}/> : null}
       </div>
     );
   }
