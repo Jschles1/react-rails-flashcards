@@ -17,8 +17,7 @@ class Quiz extends React.Component {
   render() {
     return(
       <div>
-        <Segment stacked textAlign="center">
-        </Segment>
+        <div className="card">Hello</div>
       </div>
     );
   }
