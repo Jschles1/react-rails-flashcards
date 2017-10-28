@@ -13,7 +13,7 @@ class QuizPage extends React.Component {
   render() {
     return(
       <div>
-        <ChooseDeckForQuiz/>
+        <ChooseDeckForQuiz decks={this.props.decks}/>
       </div>
     );
   }
