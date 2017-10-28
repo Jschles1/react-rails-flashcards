@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../../actions/deckActions';
-import * as actions from '../../actions/cardActions';
+import * as deckActions from '../../actions/deckActions';
+import * as cardActions from '../../actions/cardActions';
 import { bindActionCreators } from 'redux';
 import ChooseDeckForQuiz from '../ChooseDeckForQuiz';
 import Quiz from './Quiz';
@@ -16,7 +16,7 @@ class QuizPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.actions.fetchDecks();
+    this.props.deckActions.fetchDecks();
   }
 
   handleDeckChoice = (event) => {
@@ -39,7 +39,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return { actions: bindActionCreators(actions, dispatch) }
+  return { deckActions: bindActionCreators(deckActions, dispatch), cardActions: bindActionCreators(cardActions, dispatch) }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuizPage);
