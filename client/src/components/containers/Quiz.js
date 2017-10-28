@@ -9,8 +9,9 @@ class Quiz extends React.Component {
     super(props);
 
     this.state = {
-      question: true,
-      answer: false
+      question: '',
+      answer: '',
+      showAnswer: false
     }
   }
 
@@ -18,6 +19,8 @@ class Quiz extends React.Component {
     return(
       <div>
         <div className="card">Hello</div>
+        <br></br>
+        <Button content="Show Answer" basic color="black"/>
       </div>
     );
   }
