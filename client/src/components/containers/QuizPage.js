@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/deckActions';
+import * as actions from '../../actions/cardActions';
 import { bindActionCreators } from 'redux';
 import ChooseDeckForQuiz from '../ChooseDeckForQuiz';
+import Quiz from './Quiz';
 
 class QuizPage extends React.Component {
   constructor(props) {
@@ -26,7 +28,7 @@ class QuizPage extends React.Component {
   render() {
     return(
       <div>
-        {(this.state.choosingDeck) ? <ChooseDeckForQuiz decks={this.props.decks} choose={this.handleDeckChoice}/> : null}
+        {(this.state.choosingDeck) ? <ChooseDeckForQuiz decks={this.props.decks} choose={this.handleDeckChoice}/> : <Quiz/>}
       </div>
     );
   }
