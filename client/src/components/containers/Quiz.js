@@ -15,16 +15,17 @@ class Quiz extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.props.actions.fetchCards(this.props.deckId);
+  }
+
   render() {
     return(
       <div>
-        {/* <div className="card">Hello</div>
-        <br></br>
-        <Button size="big" content="Show Answer" basic color="black"/> */}
         <Grid textAlign="center" style={{ height: "100%" }} verticalAlign="middle">
           <Grid.Column style={{ maxWidth: 600 }}>
             <Segment stacked style={{ padding: 50 }}>
-              <p>Hello</p>
+              {<p>Hello</p>}
             </Segment>
           </Grid.Column>
         </Grid>
@@ -33,14 +34,8 @@ class Quiz extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  const deck = state.decks.find(deck => deck.id === parseInt(ownProps.match.params.deckId), 10);
-  
-  if (deck) {
-    return { deck: deck, cards: state.cards }
-  } else {
-    return { deck: {} }
-  }
+const mapStateToProps = (state) => {
+  return { decks: state.decks, cards: state.cards, errors: state.errors };
 }
 
 const mapDispatchToProps = (dispatch) => {
