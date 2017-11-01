@@ -18,10 +18,14 @@ class Quiz extends React.Component {
     return(
       <div>
         <Grid textAlign="center" style={{ height: "100%" }} verticalAlign="middle">
-          <Grid.Column style={{ maxWidth: 600 }}>
+          <Grid.Column style={{ maxWidth: 500 }}>
             <Segment stacked style={{ padding: 50 }}>
               {(this.state.showAnswer) ? card.answer : card.question}
             </Segment>
+            <Button style={{ marginBottom: 20, marginTop: 20 }} size="big" circular content="X"/>
+            <br></br>
+            <Button size="massive" color="red" circular icon="remove"/>
+            <Button size="massive" color="green" circular icon="check"/>
           </Grid.Column>
         </Grid>
       </div>
