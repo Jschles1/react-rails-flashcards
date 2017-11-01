@@ -9,8 +9,6 @@ class Quiz extends React.Component {
     super(props);
 
     this.state = {
-      question: '',
-      answer: '',
       showAnswer: false
     }
   }
@@ -20,12 +18,13 @@ class Quiz extends React.Component {
   }
 
   render() {
+    let card = this.props.cards[Math.floor(Math.random() * this.props.cards.length)]
     return(
       <div>
         <Grid textAlign="center" style={{ height: "100%" }} verticalAlign="middle">
           <Grid.Column style={{ maxWidth: 600 }}>
             <Segment stacked style={{ padding: 50 }}>
-              {<p>Hello</p>}
+              {(this.state.showAnswer) ? card.answer : card.question}
             </Segment>
           </Grid.Column>
         </Grid>

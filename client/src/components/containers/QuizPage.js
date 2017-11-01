@@ -21,7 +21,6 @@ class QuizPage extends React.Component {
   }
 
   handleDeckChoice = (event) => {
-    console.log(event.target.id)
     this.setState({
       choosingDeck: false,
       deckId: event.target.id
