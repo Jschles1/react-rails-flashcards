@@ -11,8 +11,7 @@ class QuizPage extends React.Component {
     super(props);
 
     this.state = {
-      choosingDeck: true,
-      deckId: null
+      choosingDeck: true
     }
   }
 
@@ -21,16 +20,17 @@ class QuizPage extends React.Component {
   }
 
   handleDeckChoice = (event) => {
-    this.setState({
-      choosingDeck: false,
-      deckId: event.target.id
+    this.props.cardActions.fetchCards(event.target.id, () => {
+      this.setState({
+        choosingDeck: false
+      })
     })
   }
 
   render() {
     return(
       <div>
-        {(this.state.choosingDeck) ? <ChooseDeckForQuiz decks={this.props.decks} choose={this.handleDeckChoice}/> : <Quiz deckId={this.state.deckId}/>}
+        {(this.state.choosingDeck) ? <ChooseDeckForQuiz decks={this.props.decks} choose={this.handleDeckChoice}/> : <Quiz cards={this.props.cards}/>}
       </div>
     );
   }

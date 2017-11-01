@@ -13,10 +13,6 @@ class Quiz extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.props.actions.fetchCards(this.props.deckId);
-  }
-
   render() {
     let card = this.props.cards[Math.floor(Math.random() * this.props.cards.length)]
     return(
