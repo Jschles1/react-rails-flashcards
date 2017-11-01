@@ -33,4 +33,18 @@ class Quiz extends React.Component {
   }
 }
 
-export default Quiz;
+const mapStateToProps = (state, ownProps) => {
+  const deck = state.decks.find(deck => deck.id === parseInt(ownProps.match.params.deckId), 10);
+  
+  if (deck) {
+    return { deck: deck, cards: state.cards }
+  } else {
+    return { deck: {} }
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return { actions: bindActionCreators(actions, dispatch) }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Quiz);
