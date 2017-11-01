@@ -18,16 +18,16 @@ class Quiz extends React.Component {
     let card = this.props.cards[Math.floor(Math.random() * this.props.cards.length)]
     return(
       <div>
-        <Header>Question 1</Header>
+        <Header style={{ marginBottom: 15 }}>Question 1</Header>
         <Grid textAlign="center" style={{ height: "100%" }} verticalAlign="middle">
           <Grid.Column style={{ maxWidth: 500 }}>
             <Segment stacked style={{ padding: 50 }}>
               {(this.state.showAnswer) ? card.answer : card.question}
             </Segment>
-            <Button style={{ marginBottom: 20, marginTop: 20 }} size="big" circular content="X"/>
+            <Button style={{ marginBottom: 20, marginTop: 20 }} size="big" circular content="Show Answer"/>
             <br></br>
-            <Button size="massive" disabled={this.state.disabled} color="red" circular icon="remove"/>
-            <Button size="massive" disabled={this.state.disabled} color="green" circular icon="check"/>
+            <Button style={{ margin: 10 }} size="massive" disabled={this.state.disabled} color="red" circular icon="remove"/>
+            <Button style={{ margin: 10 }} size="massive" disabled={this.state.disabled} color="green" circular icon="check"/>
           </Grid.Column>
         </Grid>
       </div>
