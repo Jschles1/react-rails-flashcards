@@ -10,7 +10,9 @@ class Quiz extends React.Component {
 
     this.state = {
       showAnswer: false,
-      disabled: true
+      disabled: true,
+      correct: 0,
+      incorrect: 0
     }
   }
 
@@ -21,8 +23,27 @@ class Quiz extends React.Component {
     })
   }
 
+  handleRightWrong = (event) => {
+    console.log(event.target.name)
+    const { name } = event.target;
+    if (name === "correct") {
+      this.setState({
+        [name]: ++this.state.correct,
+        disabled: true,
+        showAnswer: false
+      })
+    } else {
+      this.setState({
+        [name]: ++this.state.incorrect,
+        disabled: true,
+        showAnswer: false
+      })
+    }
+  }
+
   render() {
-    let card = this.props.cards[Math.floor(Math.random() * this.props.cards.length)]
+    // const card = this.props.cards[Math.floor(Math.random() * this.props.cards.length)]
+    const card = this.props.cards[0]
     return(
       <div>
         <Header style={{ marginBottom: 15 }}>Question 1</Header>
@@ -40,8 +61,8 @@ class Quiz extends React.Component {
               content="Show Answer"
             />
             <br></br>
-            <Button style={{ margin: 10 }} size="massive" disabled={this.state.disabled} color="red" circular icon="remove"/>
-            <Button style={{ margin: 10 }} size="massive" disabled={this.state.disabled} color="green" circular icon="check"/>
+            <Button name="correct" style={{ margin: 10 }} onClick={this.handleRightWrong} size="massive" disabled={this.state.disabled} color="green" circular content="Correct"/>
+            <Button name="incorrect" style={{ margin: 10 }} onClick={this.handleRightWrong} size="massive" disabled={this.state.disabled} color="red" circular content="Incorrect"/>
           </Grid.Column>
         </Grid>
       </div>
