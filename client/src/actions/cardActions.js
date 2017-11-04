@@ -43,6 +43,10 @@ export function deleteCard(deckId, id) {
   }
 }
 
+export function removeAnsweredCard(id) {
+  return {type: 'DELETE_CARD', id: parseInt(id)}
+}
+
 function handleErrors(response) {
   if (!response.ok) {
     throw Error(response.statusText);

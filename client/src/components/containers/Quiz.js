@@ -25,7 +25,7 @@ class Quiz extends React.Component {
 
   handleRightWrong = (event) => {
     console.log(event.target.name)
-    const { name } = event.target;
+    const { name, id } = event.target;
     if (name === "correct") {
       this.setState({
         [name]: ++this.state.correct,
@@ -39,6 +39,7 @@ class Quiz extends React.Component {
         showAnswer: false
       })
     }
+    this.props.actions.removeAnsweredCard(id)
   }
 
   render() {
@@ -61,8 +62,8 @@ class Quiz extends React.Component {
               content="Show Answer"
             />
             <br></br>
-            <Button name="correct" style={{ margin: 10 }} onClick={this.handleRightWrong} size="massive" disabled={this.state.disabled} color="green" circular content="Correct"/>
-            <Button name="incorrect" style={{ margin: 10 }} onClick={this.handleRightWrong} size="massive" disabled={this.state.disabled} color="red" circular content="Incorrect"/>
+            <Button id={card.id} name="correct" style={{ margin: 10 }} onClick={this.handleRightWrong} size="massive" disabled={this.state.disabled} color="green" circular content="Correct"/>
+            <Button id={card.id} name="incorrect" style={{ margin: 10 }} onClick={this.handleRightWrong} size="massive" disabled={this.state.disabled} color="red" circular content="Incorrect"/>
           </Grid.Column>
         </Grid>
       </div>
