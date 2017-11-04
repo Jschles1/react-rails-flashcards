@@ -19,7 +19,7 @@ class DecksPage extends React.Component {
   render() {
     return(
       <div>
-        <DecksList decks={this.props.decks} deleteWorkout={this.handleDeleteClick}/>
+        <DecksList decks={this.props.decks} deleteDeck={this.handleDeleteClick}/>
         <DecksForm/>
       </div>
     );
