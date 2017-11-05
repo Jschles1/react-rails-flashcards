@@ -35,7 +35,7 @@ class API::DecksController < ApplicationController
   private
 
   def deck_params
-    params.require(:deck).permit(:name, :subject)
+    params.require(:deck).permit(:name, :subject, :high_score)
   end
 
   def set_deck
