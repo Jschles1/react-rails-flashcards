@@ -47,6 +47,19 @@ export function removeAnsweredCard(id) {
   return {type: 'DELETE_CARD', id: parseInt(id)}
 }
 
+export function completeQuiz(deckId, score, callback) {
+  return function(dispatch) {
+    return fetch(`api/decks/${deckId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({ high_score: score })
+    })
+      .then(callback)
+  }
+}
+
 function handleErrors(response) {
   if (!response.ok) {
     throw Error(response.statusText);
