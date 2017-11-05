@@ -11,6 +11,7 @@ class Quiz extends React.Component {
     this.state = {
       showAnswer: false,
       disabled: true,
+      count: 1,
       correct: 0,
       incorrect: 0
     }
@@ -30,13 +31,15 @@ class Quiz extends React.Component {
       this.setState({
         [name]: ++this.state.correct,
         disabled: true,
-        showAnswer: false
+        showAnswer: false,
+        count: ++this.state.count
       })
     } else {
       this.setState({
         [name]: ++this.state.incorrect,
         disabled: true,
-        showAnswer: false
+        showAnswer: false,
+        count: ++this.state.count
       })
     }
     this.props.actions.removeAnsweredCard(id)
@@ -47,7 +50,7 @@ class Quiz extends React.Component {
     const card = this.props.cards[0]
     return(
       <div>
-        <Header style={{ marginBottom: 15 }}>Question 1</Header>
+        <Header style={{ marginBottom: 15 }}>Question {this.state.count}</Header>
         <Grid textAlign="center" style={{ height: "100%" }} verticalAlign="middle">
           <Grid.Column style={{ maxWidth: 500 }}>
             <Segment stacked style={{ padding: 50 }}>
