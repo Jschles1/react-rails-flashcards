@@ -42,7 +42,14 @@ class Quiz extends React.Component {
         count: ++this.state.count
       })
     }
-    this.props.actions.removeAnsweredCard(id)
+    if (this.props.cards.length > 1) {
+      this.props.actions.removeAnsweredCard(id);
+    } else {
+      const score = this.state.correct / this.state.count;
+      this.props.actions.completeQuiz(this.props.deckId, score, () => {
+        this.props.completeQuiz();
+      });
+    }
   }
 
   render() {
