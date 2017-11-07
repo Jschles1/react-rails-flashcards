@@ -5,6 +5,7 @@ import * as cardActions from '../../actions/cardActions';
 import { bindActionCreators } from 'redux';
 import ChooseDeckForQuiz from '../ChooseDeckForQuiz';
 import Quiz from './Quiz';
+import CompleteQuizModal from '../CompleteQuizModal';
 
 class QuizPage extends React.Component {
   constructor(props) {
@@ -12,7 +13,9 @@ class QuizPage extends React.Component {
 
     this.state = {
       choosingDeck: true,
-      deckId: 0
+      deckId: 0,
+      modalOpen: false,
+      finalScore: 0
     }
   }
 
@@ -40,6 +43,7 @@ class QuizPage extends React.Component {
   render() {
     return(
       <div>
+        <CompleteQuizModal modalOpen={this.state.modalOpen} finalScore={this.state.finalScore}/>
         {(this.state.choosingDeck) ? <ChooseDeckForQuiz decks={this.props.decks} choose={this.handleDeckChoice}/> : <Quiz cards={this.props.cards} deckId={this.state.deckId} completeQuiz={this.completeQuiz}/>}
       </div>
     );
