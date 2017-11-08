@@ -33,9 +33,18 @@ class QuizPage extends React.Component {
     })
   }
 
+  triggerModal = (score) => {
+    this.setState({
+      modalOpen: true,
+      finalScore: score
+    })
+  }
+
   completeQuiz = () => {
     this.setState({
-      choosingDeck: true
+      choosingDeck: true,
+      modalOpen: false,
+      finalScore: 0
     })
     this.props.deckActions.fetchDecks();
   }
@@ -43,8 +52,8 @@ class QuizPage extends React.Component {
   render() {
     return(
       <div>
-        <CompleteQuizModal modalOpen={this.state.modalOpen} finalScore={this.state.finalScore}/>
-        {(this.state.choosingDeck) ? <ChooseDeckForQuiz decks={this.props.decks} choose={this.handleDeckChoice}/> : <Quiz cards={this.props.cards} deckId={this.state.deckId} completeQuiz={this.completeQuiz}/>}
+        <CompleteQuizModal modalOpen={this.state.modalOpen} finalScore={this.state.finalScore} completeQuiz={this.completeQuiz}/>
+        {(this.state.choosingDeck) ? <ChooseDeckForQuiz decks={this.props.decks} choose={this.handleDeckChoice}/> : <Quiz cards={this.props.cards} deckId={this.state.deckId} triggerModal={this.triggerModal}/>}
       </div>
     );
   }
