@@ -2,9 +2,11 @@ import React from 'react';
 import { Button, Header, Icon, Modal } from 'semantic-ui-react';
 
 const CompleteQuizModal = (props) => {
-  const { modalOpen, finalScore, completeQuiz } = props;
+  let { modalOpen, finalScore, completeQuiz } = props;
+  finalScore = "% " + String(Math.round(finalScore * 100));
   return(
     <Modal
+      size="mini"
       open={modalOpen}
       closeOnEscape={false}
       closeOnDimmerClick={false}
@@ -14,10 +16,10 @@ const CompleteQuizModal = (props) => {
         Quiz Complete!
       </Modal.Header>
       <Modal.Content>
-        <p>Score: {finalScore}</p>
+        <h3>Score:    {finalScore}</h3>
       </Modal.Content>
       <Modal.Actions>
-        <Button basic color="black" labelPosition="right"  content="Continue" />
+        <Button basic color="blue" onClick={completeQuiz} content="Continue"/>
       </Modal.Actions>
     </Modal>
   );
