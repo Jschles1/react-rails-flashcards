@@ -26,27 +26,39 @@ class Quiz extends React.Component {
   }
 
   handleRightWrong = (event) => {
-    console.log(event.target.name)
+    let noNext;
+    let incrementCount;
+
+    if (this.props.cards.length > 1) {
+      noNext = false;
+      incrementCount = ++this.state.count;
+    } else {
+      noNext = true;
+      incrementCount = this.state.count;
+    }
+
     const { name, id } = event.target;
+
     if (name === "correct") {
       this.setState({
         [name]: ++this.state.correct,
         disabled: true,
-        showAnswer: false,
-        count: ++this.state.count
+        showAnswer: noNext,
+        count: incrementCount
       })
     } else {
       this.setState({
         [name]: ++this.state.incorrect,
         disabled: true,
-        showAnswer: false,
-        count: ++this.state.count
+        showAnswer: noNext,
+        count: incrementCount
       })
     }
+    
     if (this.props.cards.length > 1) {
       this.props.actions.removeAnsweredCard(id);
     } else {
-      const score = this.state.correct / this.state.count;
+      const score = this.state.correct / (this.state.count + 1);
       this.props.actions.submitScore(this.props.deckId, score, () => {
         this.props.triggerModal(score);
       });
