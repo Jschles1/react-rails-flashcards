@@ -47,8 +47,8 @@ class Quiz extends React.Component {
       this.props.actions.removeAnsweredCard(id);
     } else {
       const score = this.state.correct / this.state.count;
-      this.props.actions.completeQuiz(this.props.deckId, score, () => {
-        this.props.completeQuiz();
+      this.props.actions.submitScore(this.props.deckId, score, () => {
+        this.props.triggerModal(score);
       });
     }
   }

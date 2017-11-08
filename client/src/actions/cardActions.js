@@ -47,7 +47,7 @@ export function removeAnsweredCard(id) {
   return {type: 'DELETE_CARD', id: parseInt(id)}
 }
 
-export function completeQuiz(deckId, score, callback) {
+export function submitScore(deckId, score, callback) {
   return function(dispatch) {
     return fetch(`api/decks/${deckId}`, {
       method: 'PATCH',
