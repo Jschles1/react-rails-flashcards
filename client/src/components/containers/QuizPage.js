@@ -50,10 +50,12 @@ class QuizPage extends React.Component {
   }
 
   render() {
+    const { decks, cards } = this.props;
+    const { modalOpen, finalScore, deckId, choosingDeck } = this.state;
     return(
       <div>
-        <CompleteQuizModal modalOpen={this.state.modalOpen} finalScore={this.state.finalScore} completeQuiz={this.completeQuiz}/>
-        {(this.state.choosingDeck) ? <ChooseDeckForQuiz decks={this.props.decks} choose={this.handleDeckChoice}/> : <Quiz cards={this.props.cards} deckId={this.state.deckId} triggerModal={this.triggerModal}/>}
+        <CompleteQuizModal modalOpen={modalOpen} finalScore={finalScore} completeQuiz={this.completeQuiz}/>
+        {(choosingDeck) ? <ChooseDeckForQuiz decks={decks} choose={this.handleDeckChoice}/> : <Quiz cards={cards} deckId={deckId} triggerModal={this.triggerModal}/>}
       </div>
     );
   }
