@@ -17,7 +17,10 @@ class QuizPage extends React.Component {
       modalOpen: false,
       finalScore: 0,
       showAnswer: false,
-      disabled: true
+      disabled: true,
+      count: 0,
+      correct: 0,
+      incorrect: 0
     }
   }
 
@@ -60,7 +63,7 @@ class QuizPage extends React.Component {
 
   render() {
     const { decks, cards } = this.props;
-    const { modalOpen, finalScore, deckId, choosingDeck, disabled, showAnswer } = this.state;
+    const { modalOpen, finalScore, deckId, choosingDeck, disabled, showAnswer, count } = this.state;
     return(
       <div>
         <CompleteQuizModal 
@@ -79,7 +82,9 @@ class QuizPage extends React.Component {
             disabled={disabled} 
             showAnswer={showAnswer} 
             triggerModal={this.triggerModal}
-            showAnswer={this.showAnswer}
+            showAnswer={showAnswer}
+            handleShowAnswer={this.handleShowAnswer}
+            count={count}
           />}
       </div>
     );
