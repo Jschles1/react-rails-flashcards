@@ -45,6 +45,47 @@ class QuizPage extends React.Component {
     })
   }
 
+  handleRightWrong = (event) => {
+    let noNext;
+    let incrementCount;
+    const { name, id } = event.target;
+    const { cards, cardActions } = this.props;
+    let { count, correct, deckId, incorrect } = this.state;
+
+    if (cards.length > 1) {
+      noNext = false;
+      incrementCount = ++count;
+    } else {
+      noNext = true;
+      incrementCount = count;
+    }
+
+    if (name === "correct") {
+      this.setState({
+        [name]: ++correct,
+        disabled: true,
+        showAnswer: noNext,
+        count: incrementCount
+      })
+    } else {
+      this.setState({
+        [name]: ++incorrect,
+        disabled: true,
+        showAnswer: noNext,
+        count: incrementCount
+      })
+    }
+
+    if (cards.length > 1) {
+      cardActions.removeAnsweredCard(id);
+    } else {
+      const score = correct / (count + 1);
+      cardActions.submitScore(deckId, score, () => {
+        this.triggerModal(score);
+      });
+    }
+  }
+
   triggerModal = (score) => {
     this.setState({
       modalOpen: true,
@@ -84,6 +125,7 @@ class QuizPage extends React.Component {
             triggerModal={this.triggerModal}
             showAnswer={showAnswer}
             handleShowAnswer={this.handleShowAnswer}
+            handleRightWrong={this.handleRightWrong}
             count={count}
           />}
       </div>
