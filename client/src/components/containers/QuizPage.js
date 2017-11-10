@@ -79,6 +79,9 @@ class QuizPage extends React.Component {
     if (cards.length > 1) {
       cardActions.removeAnsweredCard(id);
     } else {
+      this.setState({
+        showAnswer: false
+      })
       const score = correct / (count + 1);
       cardActions.submitScore(deckId, score, () => {
         this.triggerModal(score);
