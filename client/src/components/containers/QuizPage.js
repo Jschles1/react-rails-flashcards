@@ -15,7 +15,9 @@ class QuizPage extends React.Component {
       choosingDeck: true,
       deckId: 0,
       modalOpen: false,
-      finalScore: 0
+      finalScore: 0,
+      showAnswer: false,
+      disabled: true
     }
   }
 

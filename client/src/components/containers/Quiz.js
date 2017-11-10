@@ -67,7 +67,6 @@ class Quiz extends React.Component {
   }
 
   render() {
-    // const card = this.props.cards[Math.floor(Math.random() * this.props.cards.length)]
     const card = this.props.cards[0]
     const { showAnswer, disabled, count } = this.state;
     return(
