@@ -17,12 +17,10 @@ class DecksPage extends React.Component {
   }
 
   render() {
-    return(
-      <div>
-        <DecksList decks={this.props.decks} deleteDeck={this.handleDeleteClick}/>
-        <DecksForm/>
-      </div>
-    );
+    return [
+      <DecksList decks={this.props.decks} deleteDeck={this.handleDeleteClick}/>,
+      <DecksForm/>
+    ];
   }
 }
 

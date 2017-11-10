@@ -18,16 +18,14 @@ class DeckShow extends React.Component {
   }
 
   render() {
-    return(
-      <div>
-        <Header as="h2" icon="clone" content={this.props.deck.name} />
-        <CardsList 
-          cards={this.props.cards}
-          deleteCard={this.handleDeleteClick}
-        />
-        <CardsForm deckId={this.props.deck.id} />
-      </div>
-    );
+    return [
+      <Header as="h2" icon="clone" content={this.props.deck.name} />,
+      <CardsList 
+        cards={this.props.cards}
+        deleteCard={this.handleDeleteClick}
+      />,
+       <CardsForm deckId={this.props.deck.id} />
+    ];
   }
 }
 
