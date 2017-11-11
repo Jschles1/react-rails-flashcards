@@ -80,9 +80,9 @@ class QuizPage extends React.Component {
       cardActions.removeAnsweredCard(id);
     } else {
       this.setState({
-        showAnswer: false
+        showAnswer: false,
       })
-      const score = correct / (count + 1);
+      let score = correct / (count + 1);
       cardActions.submitScore(deckId, score, () => {
         this.triggerModal(score);
       });
@@ -100,7 +100,10 @@ class QuizPage extends React.Component {
     this.setState({
       choosingDeck: true,
       modalOpen: false,
-      finalScore: 0
+      finalScore: 0,
+      count: 0,
+      correct: 0,
+      incorrect: 0
     })
     this.props.deckActions.fetchDecks();
   }
