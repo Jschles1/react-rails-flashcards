@@ -112,6 +112,7 @@ class QuizPage extends React.Component {
     const { decks, cards } = this.props;
     const { modalOpen, finalScore, deckId, choosingDeck, disabled, showAnswer, count } = this.state;
     return(
+      // 3. Upon quiz completion, CompleteQuizModal will be rendered.
       <div>
         <CompleteQuizModal 
           modalOpen={modalOpen} 
@@ -119,11 +120,13 @@ class QuizPage extends React.Component {
           completeQuiz={this.completeQuiz}
         />
         {choosingDeck ? (
+          // 1. Upon mounting QuizPage, user will be asked to choose a card deck to quiz themselves.
           <ChooseDeckForQuiz 
             decks={decks} 
             choose={this.handleDeckChoice}
           /> 
         ) : (
+          // 2. After a quiz has been chosen, Quiz will be rendered.
           <Quiz 
             cards={cards} 
             deckId={deckId} 
