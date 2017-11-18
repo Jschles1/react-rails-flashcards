@@ -118,11 +118,12 @@ class QuizPage extends React.Component {
           finalScore={finalScore} 
           completeQuiz={this.completeQuiz}
         />
-        {(choosingDeck) ? 
+        {choosingDeck ? (
           <ChooseDeckForQuiz 
             decks={decks} 
             choose={this.handleDeckChoice}
-          /> : 
+          /> 
+        ) : (
           <Quiz 
             cards={cards} 
             deckId={deckId} 
@@ -133,7 +134,8 @@ class QuizPage extends React.Component {
             handleShowAnswer={this.handleShowAnswer}
             handleRightWrong={this.handleRightWrong}
             count={count}
-          />}
+          />
+        )}
       </div>
     );
   }
