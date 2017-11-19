@@ -18,8 +18,8 @@ class DecksPage extends React.Component {
 
   render() {
     return [
-      <DecksList decks={this.props.decks} deleteDeck={this.handleDeleteClick}/>,
-      <DecksForm/>
+      <DecksList decks={this.props.decks} deleteDeck={this.handleDeleteClick} />,
+      <DecksForm />
     ];
   }
 }
