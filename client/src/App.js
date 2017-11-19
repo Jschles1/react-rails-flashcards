@@ -13,14 +13,14 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-            <Navbar/>
+            <Navbar />
             <br></br>
             <Container>
-            <Route exact path="/" component={DecksPage}/>
+            <Route exact path="/" component={DecksPage} />
               <Switch>
-                <Route path="/decks/:deckId" component={DeckShow}/>
+                <Route path="/decks/:deckId" component={DeckShow} />
               </Switch>
-            <Route exact path="/quiz" component={QuizPage}/>
+            <Route exact path="/quiz" component={QuizPage} />
             </Container>
           </div>
         </Router>
