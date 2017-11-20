@@ -10,10 +10,10 @@ const DecksList = (props) => {
         <Table.Cell>{deck.name}</Table.Cell>
         <Table.Cell>{deck.subject}</Table.Cell>
         <Table.Cell>
-          <Button fluid as={Link} to={`/decks/${deck.id}`} content="View Cards" basic color="blue" icon="right arrow" labelPosition="right"/>
+          <Button fluid as={Link} to={`/decks/${deck.id}`} content="View Cards" basic color="blue" icon="right arrow" labelPosition="right" />
         </Table.Cell>
         <Table.Cell>
-          <Button fluid id={deck.id} onClick={deleteDeck} content="Delete Deck" basic color="red" icon="remove" labelPosition="right"/>
+          <Button fluid id={deck.id} onClick={deleteDeck} content="Delete Deck" basic color="red" icon="remove" labelPosition="right" />
         </Table.Cell>
       </Table.Row>
     );

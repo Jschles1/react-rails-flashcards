@@ -33,13 +33,13 @@ class CardsForm extends React.Component {
   render() {
     return(
       <Segment>
-        {this.props.errors === true ? <FormError/> : null}
+        {this.props.errors === true ? <FormError /> : null}
         <Form onSubmit={this.handleOnSubmit}>
           <Form.Group widths="equal">
-            <Form.Input value={this.state.question} onChange={this.handleOnChange} name="question" label="Question" placeholder="Question"/>
-            <Form.Input value={this.state.answer} onChange={this.handleOnChange} name="answer" label="Answer" placeholder="Answer"/>
+            <Form.Input value={this.state.question} onChange={this.handleOnChange} name="question" label="Question" placeholder="Question" />
+            <Form.Input value={this.state.answer} onChange={this.handleOnChange} name="answer" label="Answer" placeholder="Answer" />
           </Form.Group>
-          <Button basic color="black" content="Add Question" type="submit" icon="plus" labelPosition="right"/>
+          <Button basic color="black" content="Add Question" type="submit" icon="plus" labelPosition="right" />
         </Form>
       </Segment>
     );

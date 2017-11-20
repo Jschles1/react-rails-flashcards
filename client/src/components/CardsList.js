@@ -9,7 +9,7 @@ const CardsList = (props) => {
         <Table.Cell>{card.question}</Table.Cell>
         <Table.Cell>{card.answer}</Table.Cell>
         <Table.Cell>
-          <Button fluid id={card.id} onClick={deleteCard} content="Delete Card" basic color="red"/>
+          <Button fluid id={card.id} onClick={deleteCard} content="Delete Card" basic color="red" />
         </Table.Cell>
       </Table.Row>
     );

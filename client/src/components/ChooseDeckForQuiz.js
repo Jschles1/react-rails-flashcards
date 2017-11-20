@@ -10,7 +10,7 @@ const ChooseDeckForQuiz = (props) => {
       <Table.Cell>{deck.name}</Table.Cell>
       <Table.Cell>{deck.subject}</Table.Cell>
       <Table.Cell>
-        <Button fluid id={deck.id} content="Start Quiz" onClick={choose} basic color="green" icon="right arrow" labelPosition="right"/>
+        <Button fluid id={deck.id} content="Start Quiz" onClick={choose} basic color="green" icon="right arrow" labelPosition="right" />
       </Table.Cell>
     </Table.Row>
     );

@@ -19,7 +19,7 @@ const CompleteQuizModal = (props) => {
         <h3>Score:    {finalScore}</h3>
       </Modal.Content>
       <Modal.Actions>
-        <Button basic color="blue" onClick={completeQuiz} content="Continue"/>
+        <Button basic color="blue" onClick={completeQuiz} content="Continue" />
       </Modal.Actions>
     </Modal>
   );

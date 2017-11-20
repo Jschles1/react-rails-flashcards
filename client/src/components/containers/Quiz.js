@@ -32,8 +32,8 @@ class Quiz extends React.Component {
               content="Show Answer"
             />
             <br></br>
-            <Button id={card.id} name="correct" style={{ margin: 10 }} onClick={handleRightWrong} size="massive" disabled={disabled} color="green" circular content="Correct"/>
-            <Button id={card.id} name="incorrect" style={{ margin: 10 }} onClick={handleRightWrong} size="massive" disabled={disabled} color="red" circular content="Incorrect"/>
+            <Button id={card.id} name="correct" style={{ margin: 10 }} onClick={handleRightWrong} size="massive" disabled={disabled} color="green" circular content="Correct" />
+            <Button id={card.id} name="incorrect" style={{ margin: 10 }} onClick={handleRightWrong} size="massive" disabled={disabled} color="red" circular content="Incorrect" />
           </Grid.Column>
         </Grid>
       </div>
