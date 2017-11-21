@@ -16,20 +16,18 @@ const CardsList = (props) => {
   })
 
   return(
-    <div>
-      <Table celled>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell>Question:</Table.HeaderCell>
-            <Table.HeaderCell>Answer:</Table.HeaderCell>
-            <Table.HeaderCell>Options:</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          {(cards) ? renderCards : null}
-        </Table.Body>
-      </Table>
-    </div>
+    <Table celled>
+      <Table.Header>
+        <Table.Row>
+          <Table.HeaderCell>Question:</Table.HeaderCell>
+          <Table.HeaderCell>Answer:</Table.HeaderCell>
+          <Table.HeaderCell>Options:</Table.HeaderCell>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        {(cards) ? renderCards : null}
+      </Table.Body>
+    </Table>
   );
 }
 

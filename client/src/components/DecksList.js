@@ -20,7 +20,7 @@ const DecksList = (props) => {
   })
 
   return(
-    <div>
+    
       <Table celled>
         <Table.Header>
           <Table.Row>
@@ -33,7 +33,7 @@ const DecksList = (props) => {
           {(decks) ? renderDecks : null}
         </Table.Body>
       </Table>
-    </div>
+    
   );
 }
 

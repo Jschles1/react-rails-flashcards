@@ -15,23 +15,21 @@ const ChooseDeckForQuiz = (props) => {
     </Table.Row>
     );
   })
-  return(
-    <div>
-      <h1>Choose a Deck:</h1>
-      <Table celled>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell>Deck Name:</Table.HeaderCell>
-            <Table.HeaderCell>Subject:</Table.HeaderCell>
-            <Table.HeaderCell>Options:</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          {(decks) ? renderDecks : null}
-        </Table.Body>
-      </Table>
-    </div>
-  );
+  return [
+    <h1>Choose a Deck:</h1>,
+    <Table celled>
+      <Table.Header>
+        <Table.Row>
+          <Table.HeaderCell>Deck Name:</Table.HeaderCell>
+          <Table.HeaderCell>Subject:</Table.HeaderCell>
+          <Table.HeaderCell>Options:</Table.HeaderCell>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        {(decks) ? renderDecks : null}
+      </Table.Body>
+    </Table>
+  ];
 }
 
 export default ChooseDeckForQuiz;
