@@ -20,20 +20,18 @@ const DecksList = (props) => {
   })
 
   return(
-    
-      <Table celled>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell>Deck Name:</Table.HeaderCell>
-            <Table.HeaderCell>Subject:</Table.HeaderCell>
-            <Table.HeaderCell colSpan="2">Options:</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          {(decks) ? renderDecks : null}
-        </Table.Body>
-      </Table>
-    
+    <Table celled>
+      <Table.Header>
+        <Table.Row>
+          <Table.HeaderCell>Deck Name:</Table.HeaderCell>
+          <Table.HeaderCell>Subject:</Table.HeaderCell>
+          <Table.HeaderCell colSpan="2">Options:</Table.HeaderCell>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        {(decks) ? renderDecks : null}
+      </Table.Body>
+    </Table>
   );
 }
 
