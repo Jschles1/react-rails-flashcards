@@ -6,14 +6,18 @@ class BasicButton extends React.Component {
     super(props);
 
     this.state = {
-
+      isBeingHovered: false
     }
   }
 
   render() {
     return(
-      <Button>
-
+      <Button 
+        basic={!(this.state.isBeingHovered)}
+        color={this.props.color}
+        onClick={this.props.click}
+      >
+        {this.props.textContent}
       </Button>
     );
   }
