@@ -18,7 +18,7 @@ class BasicButton extends React.Component {
   }
 
   render() {
-    const { isFluid, color, click, textContent, link, url } = this.props;
+    const { isFluid, color, click, textContent, link, url, type, icon, label } = this.props;
     return(
       <Button 
         fluid={isFluid}
@@ -29,6 +29,9 @@ class BasicButton extends React.Component {
         onMouseLeave={this.invertColor}
         as={link ? link : null}
         to={url ? url : null}
+        type={type ? type : null}
+        icon={icon ? icon : null}
+        labelPosition={label ? label : null}
       >
         {textContent}
       </Button>
