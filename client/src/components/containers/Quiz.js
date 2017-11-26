@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions/cardActions';
 import { bindActionCreators } from 'redux';
 import { Grid, Segment, Button, Header } from 'semantic-ui-react';
-import CompleteQuizModal from '../CompleteQuizModal';
 
 class Quiz extends React.Component {
   constructor(props) {

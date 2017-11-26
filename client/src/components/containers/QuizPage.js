@@ -133,7 +133,6 @@ class QuizPage extends React.Component {
             disabled={disabled} 
             showAnswer={showAnswer} 
             triggerModal={this.triggerModal}
-            showAnswer={showAnswer}
             handleShowAnswer={this.handleShowAnswer}
             handleRightWrong={this.handleRightWrong}
             count={count}

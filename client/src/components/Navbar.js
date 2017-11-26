@@ -1,10 +1,10 @@
 import React from 'react';
-import { Menu, Icon, Button } from 'semantic-ui-react';
+import { Menu, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return(
-    <Menu borderless>
+    <Menu>
       <Menu.Item header>Flashcards</Menu.Item>
       <Menu.Item bordered>
         <Button basic color="black" as={Link} to={`/`}>My Decks</Button>

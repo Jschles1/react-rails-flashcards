@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/deckActions';
 import { bindActionCreators } from 'redux';
-import { Segment, Form, Input, Button } from 'semantic-ui-react';
+import { Segment, Form, Button } from 'semantic-ui-react';
 import FormError from '../FormError';
 
 class DecksForm extends React.Component {
