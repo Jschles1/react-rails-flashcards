@@ -10,12 +10,20 @@ class BasicButton extends React.Component {
     }
   }
 
+  invertColor = () => {
+    this.setState({
+      isBeingHovered: true
+    })
+  }
+
   render() {
     return(
       <Button 
+        fluid={this.props.isFluid}
         basic={!(this.state.isBeingHovered)}
         color={this.props.color}
         onClick={this.props.click}
+        onMouseOver={this.invertColor}
       >
         {this.props.textContent}
       </Button>
