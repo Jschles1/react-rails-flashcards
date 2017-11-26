@@ -17,15 +17,16 @@ class BasicButton extends React.Component {
   }
 
   render() {
+    const { isFluid, color, click, textContent } = this.props;
     return(
       <Button 
-        fluid={this.props.isFluid}
+        fluid={isFluid}
         basic={!(this.state.isBeingHovered)}
-        color={this.props.color}
-        onClick={this.props.click}
+        color={color}
+        onClick={click}
         onMouseOver={this.invertColor}
       >
-        {this.props.textContent}
+        {textContent}
       </Button>
     );
   }
