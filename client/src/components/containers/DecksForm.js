@@ -4,6 +4,7 @@ import * as actions from '../../actions/deckActions';
 import { bindActionCreators } from 'redux';
 import { Segment, Form, Button } from 'semantic-ui-react';
 import FormError from '../FormError';
+import BasicButton from '../BasicButton'
 
 class DecksForm extends React.Component {
   constructor(props) {
@@ -35,7 +36,15 @@ class DecksForm extends React.Component {
             <Form.Input value={this.state.name} onChange={this.handleOnChange} name="name" label="Deck Name" placeholder="Deck Name" />
             <Form.Input value={this.state.subject} onChange={this.handleOnChange} name="subject" label="Subject" placeholder="Subject" />
           </Form.Group>
-          <Button basic color="black" content="Create Deck" type="submit" icon="plus" labelPosition="right" />
+          {/* <Button basic color="black" content="Create Deck" type="submit" icon="plus" labelPosition="right" /> */}
+          <BasicButton 
+            isFluid={false}
+            color="black"
+            type="submit"
+            textContent="Create Deck"
+            icon="plus"
+            label="right"
+          />
         </Form>
       </Segment>
     );
