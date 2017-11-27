@@ -31,10 +31,9 @@ class BasicButton extends React.Component {
         to={url ? url : null}
         type={type ? type : null}
         icon={icon ? icon : null}
-        labelPosition={label ? label : null}
-      >
-        {textContent}
-      </Button>
+        labelPosition={label === "right" ? "right" : null}
+        content={textContent}
+      />
     );
   }
 }
