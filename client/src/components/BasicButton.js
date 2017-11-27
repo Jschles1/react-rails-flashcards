@@ -18,7 +18,7 @@ class BasicButton extends React.Component {
   }
 
   render() {
-    const { isFluid, color, click, textContent, link, url, type, icon, label } = this.props;
+    const { isFluid, color, click, textContent, link, url, type, icon, label, id } = this.props;
     return(
       <Button 
         fluid={isFluid}
@@ -32,6 +32,7 @@ class BasicButton extends React.Component {
         type={type ? type : null}
         icon={icon ? icon : null}
         labelPosition={label === "right" ? "right" : null}
+        id={id ? id : null}
         content={textContent}
       />
     );

@@ -4,7 +4,7 @@ import * as actions from '../../actions/deckActions';
 import { bindActionCreators } from 'redux';
 import { Segment, Form, Button } from 'semantic-ui-react';
 import FormError from '../FormError';
-import BasicButton from '../BasicButton'
+import BasicButton from '../BasicButton';
 
 class DecksForm extends React.Component {
   constructor(props) {
