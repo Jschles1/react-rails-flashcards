@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Table, Button } from 'semantic-ui-react';
+import BasicButton from './BasicButton';
 
 const DecksList = (props) => {
   const { decks, deleteDeck } = props;
@@ -10,10 +11,28 @@ const DecksList = (props) => {
         <Table.Cell>{deck.name}</Table.Cell>
         <Table.Cell>{deck.subject}</Table.Cell>
         <Table.Cell>
-          <Button fluid as={Link} to={`/decks/${deck.id}`} content="View Cards" basic color="blue" icon="right arrow" labelPosition="right" />
+          {/* <Button fluid as={Link} to={`/decks/${deck.id}`} content="View Cards" basic color="blue" icon="right arrow" labelPosition="right" /> */}
+          <BasicButton 
+            isFluid={true}
+            color="blue"
+            link={Link}
+            url={`/decks/${deck.id}`}
+            textContent="View Cards"
+            icon="right arrow"
+            label="right"
+          />
         </Table.Cell>
         <Table.Cell>
-          <Button fluid id={deck.id} onClick={deleteDeck} content="Delete Deck" basic color="red" icon="remove" labelPosition="right" />
+          {/* <Button fluid id={deck.id} onClick={deleteDeck} content="Delete Deck" basic color="red" icon="remove" labelPosition="right" /> */}
+          <BasicButton 
+            isFluid={true}
+            color="red"
+            id={deck.id}
+            click={deleteDeck}
+            textContent="Delete Deck"
+            icon="remove"
+            label="right"
+          />
         </Table.Cell>
       </Table.Row>
     );
