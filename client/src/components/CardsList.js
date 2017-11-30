@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table, Button } from 'semantic-ui-react';
+import BasicButton from './BasicButton';
 
 const CardsList = (props) => {
   const { cards, deleteCard } = props;
@@ -9,7 +10,16 @@ const CardsList = (props) => {
         <Table.Cell>{card.question}</Table.Cell>
         <Table.Cell>{card.answer}</Table.Cell>
         <Table.Cell>
-          <Button fluid id={card.id} onClick={deleteCard} content="Delete Card" basic color="red" />
+          {/* <Button fluid id={card.id} onClick={deleteCard} content="Delete Card" basic color="red" /> */}
+          <BasicButton 
+            isFluid={true}
+            color="red"
+            id={card.id}
+            click={deleteCard}
+            textContent="Delete Card"
+            icon="remove"
+            label="right"
+          />
         </Table.Cell>
       </Table.Row>
     );
