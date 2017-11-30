@@ -40,7 +40,6 @@ class CardsForm extends React.Component {
             <Form.Input value={this.state.question} onChange={this.handleOnChange} name="question" label="Question" placeholder="Question" />
             <Form.Input value={this.state.answer} onChange={this.handleOnChange} name="answer" label="Answer" placeholder="Answer" />
           </Form.Group>
-          {/* <Button basic color="black" content="Add Question" type="submit" icon="plus" labelPosition="right" /> */}
           <BasicButton 
             isFluid={false}
             color="black"

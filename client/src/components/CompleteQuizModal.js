@@ -12,6 +12,7 @@ const CompleteQuizModal = (props) => {
       closeOnEscape={false}
       closeOnDimmerClick={false}
       closeOnRootNodeClick={false}
+      style={{ textAlign: 'center' }}
     >
       <Modal.Header>
         Quiz Complete!
@@ -20,7 +21,6 @@ const CompleteQuizModal = (props) => {
         <h3>Score:    {finalScore}</h3>
       </Modal.Content>
       <Modal.Actions>
-        {/* <Button basic color="blue" onClick={completeQuiz} content="Continue" /> */}
         <BasicButton 
           isFluid={false}
           color="blue"

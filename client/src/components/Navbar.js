@@ -8,7 +8,6 @@ const Navbar = () => {
     <Menu>
       <Menu.Item header>Flashcards</Menu.Item>
       <Menu.Item bordered>
-        {/* <Button basic color="black" as={Link} to={`/`}>My Decks</Button> */}
         <BasicButton 
           isFluid={false}
           color="black"
@@ -18,7 +17,6 @@ const Navbar = () => {
         />
       </Menu.Item>
       <Menu.Item>
-       {/* <Button basic color="green" as={Link} to={`/quiz`}>Quiz Yourself</Button> */}
        <BasicButton 
           isFluid={false}
           color="green"

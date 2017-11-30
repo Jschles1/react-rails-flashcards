@@ -11,7 +11,6 @@ const DecksList = (props) => {
         <Table.Cell>{deck.name}</Table.Cell>
         <Table.Cell>{deck.subject}</Table.Cell>
         <Table.Cell>
-          {/* <Button fluid as={Link} to={`/decks/${deck.id}`} content="View Cards" basic color="blue" icon="right arrow" labelPosition="right" /> */}
           <BasicButton 
             isFluid={true}
             color="blue"
@@ -23,7 +22,6 @@ const DecksList = (props) => {
           />
         </Table.Cell>
         <Table.Cell>
-          {/* <Button fluid id={deck.id} onClick={deleteDeck} content="Delete Deck" basic color="red" icon="remove" labelPosition="right" /> */}
           <BasicButton 
             isFluid={true}
             color="red"
