@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/cardActions';
-import { Header } from 'semantic-ui-react';
+import { Header, Grid } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import CardsList from '../CardsList';
 import CardsForm from './CardsForm';
@@ -19,7 +19,16 @@ class DeckShow extends React.Component {
 
   render() {
     return [
-      <Header as="h2" icon="clone" content={this.props.deck.name} />,
+      <Grid>
+        <Grid.Column floated="left" width={5}>
+          <Header as="h2" icon="clone" content={this.props.deck.name} />
+        </Grid.Column>
+        <Grid.Column floated='right' width={5}>
+          <Header as="h2">
+            Subject: {this.props.deck.subject}
+          </Header>
+        </Grid.Column>
+      </Grid>,
       <CardsList 
         cards={this.props.cards}
         deleteCard={this.handleDeleteClick}
