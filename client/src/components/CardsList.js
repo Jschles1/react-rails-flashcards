@@ -30,7 +30,7 @@ const CardsList = (props) => {
         <Table.Row>
           <Table.HeaderCell>Question:</Table.HeaderCell>
           <Table.HeaderCell>Answer:</Table.HeaderCell>
-          <Table.HeaderCell>Options:</Table.HeaderCell>
+          <Table.HeaderCell style={{textAlign: "center"}}>Options:</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
       <Table.Body>

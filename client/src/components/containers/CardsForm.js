@@ -44,7 +44,7 @@ class CardsForm extends React.Component {
             isFluid={false}
             color="black"
             type="submit"
-            textContent="Add Question"
+            textContent="Add Card"
             icon="plus"
             label="right"
           />

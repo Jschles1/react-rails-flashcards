@@ -42,7 +42,7 @@ const DecksList = (props) => {
         <Table.Row>
           <Table.HeaderCell>Deck Name:</Table.HeaderCell>
           <Table.HeaderCell>Subject:</Table.HeaderCell>
-          <Table.HeaderCell colSpan="2">Options:</Table.HeaderCell>
+          <Table.HeaderCell colSpan="2" style={{textAlign: "center"}}>Options:</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
       <Table.Body>
