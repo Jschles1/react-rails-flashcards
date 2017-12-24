@@ -2,7 +2,7 @@ import fetch from 'isomorphic-fetch';
 
 export function fetchCards(deckId, callback) {
   return function(dispatch) {
-    dispatch({type: 'LOADING_CARDS'})
+    dispatch({type: 'LOADING'})
     return fetch(`/api/decks/${deckId}/cards`)
       .then(resp => resp.json())
       .then(cards => dispatch({type: 'FETCH_CARDS', payload: cards}))
